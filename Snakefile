@@ -23,6 +23,6 @@ rule relabel_amplicons:
     shell:
         'seqkit replace -p .+ -r "{wildcards.organism}_{{nr}}" {input} > {output}'
 
-rule all_relabelled_amplicons:
+rule find_amplicons:
     input:
         ["output/amplicons_relabelled/" + organism + ".fasta" for organism in config["genomes"].keys()]
