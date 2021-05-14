@@ -21,6 +21,8 @@ Edit `config.json` to indicate paths to bacterial genome FASTA files, like so:
 
 Then
 
-	snakemake --cores 1 find_amplicons
+	snakemake --cores 1 --use-conda find_amplicons
 
 should do the trick.
+
+If you have `seqkit` in your `PATH` you can leave out the `--use-conda`.
